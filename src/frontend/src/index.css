@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "BricolageGrotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background: deep charcoal */
+    --background: 0.18 0.005 60;
+    --foreground: 0.96 0.01 80;
+
+    --card: 0.22 0.008 60;
+    --card-foreground: 0.96 0.01 80;
+
+    --popover: 0.22 0.008 60;
+    --popover-foreground: 0.96 0.01 80;
+
+    /* Primary: deep orange-amber */
+    --primary: 0.68 0.18 50;
+    --primary-foreground: 0.14 0.005 60;
+
+    /* Secondary: steel dark */
+    --secondary: 0.28 0.01 60;
+    --secondary-foreground: 0.96 0.01 80;
+
+    --muted: 0.26 0.008 60;
+    --muted-foreground: 0.6 0.015 70;
+
+    /* Accent: amber highlight */
+    --accent: 0.75 0.16 75;
+    --accent-foreground: 0.14 0.005 60;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 80;
+
+    --border: 0.32 0.012 60;
+    --input: 0.28 0.01 60;
+    --ring: 0.68 0.18 50;
+
+    --radius: 4px;
+
+    --chart-1: 0.68 0.18 50;
+    --chart-2: 0.75 0.16 75;
+    --chart-3: 0.55 0.15 40;
+    --chart-4: 0.4 0.1 60;
+    --chart-5: 0.85 0.1 90;
+
+    --sidebar: 0.2 0.007 60;
+    --sidebar-foreground: 0.96 0.01 80;
+    --sidebar-primary: 0.68 0.18 50;
+    --sidebar-primary-foreground: 0.14 0.005 60;
+    --sidebar-accent: 0.28 0.01 60;
+    --sidebar-accent-foreground: 0.96 0.01 80;
+    --sidebar-border: 0.32 0.012 60;
+    --sidebar-ring: 0.68 0.18 50;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "GeneralSans", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "BricolageGrotesque", sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(0.18 0.005 60);
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.68 0.18 50);
+  border-radius: 3px;
+}
